@@ -2,6 +2,22 @@ from Bio import SeqIO
 
 
 # the following program will extract individual fasta sequences and display a couple of its attributes
+
+def fasta70(seq):
+    out_seq = ""
+    try:
+        for i in range(len(seq)):
+            if i % 70 == 0 and i != 0:
+                out_seq = out_seq + "\n"
+
+            out_seq = out_seq + seq[i]
+
+    except Exception as e:
+        print("something went wrong", e)
+
+    return out_seq
+
+
 def is_dna(ea):
     for i in ea:
         if i == "A" or i == "G" or i == "T" or i == "C":
@@ -44,6 +60,7 @@ def get_seq_type(ea):
         return "protein"
     else:
         return "unidentified"
+
 
 def print_seq(in_file):
     print("there are", len(in_file), "sequence(s) in the file\n\n")
