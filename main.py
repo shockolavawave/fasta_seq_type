@@ -20,9 +20,7 @@ def fasta70(seq):
 
 def is_dna(ea):
     for i in ea:
-        if i == "A" or i == "G" or i == "T" or i == "C":
-            pass
-        else:
+        if i not in ["A", "G", "T", "C"]:
             return False
 
     return True
@@ -30,9 +28,7 @@ def is_dna(ea):
 
 def is_rna(ea):
     for i in ea:
-        if i == "A" or i == "G" or i == "U" or i == "C":
-            pass
-        else:
+        if i not in ["A", "G", "U", "C"]:
             return False
 
     return True
@@ -40,16 +36,13 @@ def is_rna(ea):
 
 def is_protein(ea):
     for i in ea:
-        if (i == "A" or i == "C" or i == "D" or i == "E" or i == "F" or i == "G" or i == "H" or
-                i == "I" or i == "K" or i == "L" or i == "M" or i == "N" or i == "P" or i == "Q" or
-                i == "R" or i == "S" or i == "T" or i == "V" or i == "W" or i == "Y" or i == "-"):
-            pass
-        else:
+        if i not in ["A", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "Y", "-"]:
             return False
 
     return True
 
-
+# the sequence of functions in the if-else ladder is important
+# if protein is kept first then even a DNA sequence might come true in it
 def get_seq_type(ea):
     if is_dna(ea):
         return "DNA"
