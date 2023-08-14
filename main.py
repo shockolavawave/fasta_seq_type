@@ -41,9 +41,8 @@ def is_rna(ea):
 def is_protein(ea):
     for i in ea:
         if (i == "A" or i == "C" or i == "D" or i == "E" or i == "F" or i == "G" or i == "H" or
-                i == "I" or i == "K" or i == "L" or i == "M" or i == "N" or i == "E" or i == "O" or
-                i == "P" or i == "Q" or i == "R" or i == "S" or i == "T" or i == "U" or i == "V" or
-                i == "W" or i == "Y" or i == "-"):
+                i == "I" or i == "K" or i == "L" or i == "M" or i == "N" or i == "P" or i == "Q" or
+                i == "R" or i == "S" or i == "T" or i == "V" or i == "W" or i == "Y" or i == "-"):
             pass
         else:
             return False
