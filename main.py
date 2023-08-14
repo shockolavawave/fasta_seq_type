@@ -41,7 +41,8 @@ def is_protein(ea):
 
     return True
 
-
+# the sequence of functions in the if-else ladder is important
+# if protein is kept first then even a DNA sequence might come true in it
 def get_seq_type(ea):
     if is_dna(ea):
         return "DNA"
